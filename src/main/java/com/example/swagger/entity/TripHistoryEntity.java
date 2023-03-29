@@ -1,5 +1,6 @@
 package com.example.swagger.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,9 +12,13 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
+@Table(name = "trip_history")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class TripHistoryEntity extends BaseEntity {
-    @OneToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private CarEntity carEntity;
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "tripHistoryEntity")
-    private List<TripHistoryItemEntity> tripHistoryItemEntity;
+    List<TripHistoryItemEntity> tripHistoryItemEntities;
+
+
 }

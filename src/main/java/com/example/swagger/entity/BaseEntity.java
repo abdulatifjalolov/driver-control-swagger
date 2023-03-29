@@ -21,10 +21,10 @@ public abstract class BaseEntity {
     private Long id;
     @CreatedBy
     @Column(updatable = false)
-    private Integer createdBy;
+    private String createdBy;
 
     @LastModifiedBy
-    private Integer lastModifiedBy;
+    private String lastModifiedBy;
 
     @CreatedDate
     @Column(updatable = false)
