@@ -16,6 +16,9 @@ import lombok.Setter;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserLoginDTO {
     @Email(message = "Email should be valid")
+    @Schema(defaultValue = "superadmin@gmail.com")
     private String email;
+
+    @Schema(defaultValue = "superadmin")
     private String password;
 }

@@ -18,15 +18,18 @@ import java.sql.Timestamp;
 public class TripHistoryItemDTO {
 
     @NotNull(message = "carId is required")
+    @Schema(defaultValue = "1")
     private Long carId;
 
     private Timestamp departureDate;
 
     @NotBlank(message = "departureAddress is required")
+    @Schema(defaultValue = "street-1")
     private String departureAddress;
 
     private Timestamp arrivalDate;
 
     @NotBlank(message = "arrivalAddress is required")
+    @Schema(defaultValue = "street-2")
     private String arrivalAddress;
 }

@@ -21,7 +21,7 @@ public class CarController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @PreAuthorize("hasRole('SUPER_ADMIN') or hasAuthority('CREATE')")
+    @PreAuthorize("hasRole('SUPER_ADMIN')")
     @Operation(summary = "Registration new car")
     public ApiResponse<Void> create(
             @Valid @RequestBody CarRequestDTO carRequestDTO

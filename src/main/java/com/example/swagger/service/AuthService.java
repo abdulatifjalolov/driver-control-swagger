@@ -49,7 +49,7 @@ public class AuthService implements UserDetailsService , AuditorAware<String> {
             throw new RecordNotFountException("username or password is incorrect");
         }
         if (!passwordEncoder.matches(userLoginDTO.getPassword(), optionalUserEntity.get().getPassword())) {
-            throw new UsernameNotFoundException("username or password is incorrect");
+            throw new RecordNotFountException("username or password is incorrect");
         }
         return new TokenDTO(
                 JWTProvider.generateAccessToken(optionalUserEntity.get()),

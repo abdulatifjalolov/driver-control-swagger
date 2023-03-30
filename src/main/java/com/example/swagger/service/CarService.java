@@ -61,7 +61,7 @@ public class CarService {
 
     private CarResponseDTO convertToCarResponseDTO(CarEntity carEntity) {
         List<TripHistoryItemDTO> tripHistoryItemDTOList = null;
-        if (!carEntity.getTripHistoryItemEntities().isEmpty()) {
+        if (carEntity.getTripHistoryItemEntities() != null) {
             tripHistoryItemDTOList = convertToTripHistoryItemDTOList(carEntity.getTripHistoryItemEntities());
         }
         return new CarResponseDTO(
