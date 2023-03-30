@@ -2,6 +2,7 @@ package com.example.swagger.config.security;
 
 import com.example.swagger.config.utils.JWTFilter;
 import com.example.swagger.service.AuthService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -15,10 +16,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-@EnableWebSecurity
 @Configuration
 @EnableMethodSecurity
 @EnableJpaAuditing
+@EnableWebSecurity
 public class SecurityConfig {
     private final JWTFilter jwtFilter;
     private final AuthService authService;

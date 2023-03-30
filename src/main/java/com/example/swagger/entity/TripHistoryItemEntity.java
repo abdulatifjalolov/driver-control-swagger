@@ -1,6 +1,6 @@
 package com.example.swagger.entity;
 
-import com.example.swagger.entity.model.dto.request.TripHistoryItemDTO;
+import com.example.swagger.entity.model.dto.TripHistoryItemDTO;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,14 +18,18 @@ import java.sql.Timestamp;
 public class TripHistoryItemEntity extends BaseEntity {
     @Column(nullable = false)
     private Timestamp departureDate;
+
     @Column(nullable = false)
     private String departureAddress;
+
     @Column(nullable = false)
     private Timestamp arrivalDate;
+
     @Column(nullable = false)
     private String arrivalAddress;
-    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private TripHistoryEntity tripHistoryEntity;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private CarEntity carEntity;
     public static TripHistoryItemEntity of(TripHistoryItemDTO tripHistoryItemDTO) {
         return TripHistoryItemEntity.builder()
                 .arrivalAddress(tripHistoryItemDTO.getArrivalAddress())

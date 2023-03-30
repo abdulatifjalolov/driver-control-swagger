@@ -25,9 +25,6 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserRequestDTO {
 
-    /**
-     * Email for registration
-     */
     @Email(message = "Email should be valid")
     @Schema(defaultValue = "abdulatifjalolov6004273@gmail.com")
     @NotBlank(message = "email is required")

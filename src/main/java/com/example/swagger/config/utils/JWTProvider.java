@@ -12,8 +12,8 @@ import java.util.List;
 
 @Component
 public class JWTProvider {
-    static String jwtAccessSecretKey = "blablabla";
-    static String jwtRefreshSecretKey = "xlaxlaxla";
+    static String jwtAccessSecretKey = "jwtAccessSecretKey";
+    static String jwtRefreshSecretKey = "jwtRefreshSecretKey";
     static long expirationAccessTime = 1_000 * 60 * 30; //30 min
     static long expirationRefreshTime = 1_000 * 60 * 60 * 24; //24 hour
 

@@ -40,7 +40,7 @@ public class AuthController {
                 authService.login(userLoginDTO)
         );
     }
-    @PostMapping("/access-token")
+    @PostMapping("/access/token")
     @Operation(summary = "To get new accessToken by refreshToken")
     @ResponseStatus(HttpStatus.CREATED)
     public ApiResponse<?> getAccessTokenByRefreshToken(
